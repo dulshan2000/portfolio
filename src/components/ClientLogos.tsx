@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 type Client = {
   name: string;
@@ -32,30 +32,25 @@ export default function ClientLogos() {
   return (
     <section className="py-20 border-y border-white/5 overflow-hidden bg-black/30">
       <div className="container mx-auto px-6 mb-10 text-center">
-        <h3 className="text-gray-500 uppercase tracking-[0.2em] text-sm">Trusted By & Collaborated With</h3>
+        <h3 className="text-zinc-500 uppercase tracking-[0.2em] text-sm">Trusted By & Collaborated With</h3>
       </div>
       
       {/* Infinite Marquee */}
       <div className="relative flex overflow-x-hidden group">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
         
-        <motion.div
-          className="flex whitespace-nowrap items-center py-4"
-          animate={{
-            x: ["0%", "-50%"],
-          }}
-          transition={{
-            ease: "linear",
-            duration: 30,
-            repeat: Infinity,
-          }}
+        <div
+          className="flex whitespace-nowrap items-center py-4 animate-marquee group-hover:[animation-play-state:paused]"
         >
-          {/* Double the array for seamless looping */}
-          {[...clients, ...clients].map((client, index) => (
-            <div key={index} className="flex items-center justify-center">
+          {/* Duplicate the array 4 times for seamless ultra-wide looping */}
+          {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
+            <div key={index} className="flex items-center justify-center shrink-0">
               {client.image ? (
-                <div className={`mx-8 md:mx-16 relative w-32 h-16 md:w-48 md:h-20 opacity-60 hover:opacity-100 transition-opacity ${client.solidBg ? 'grayscale invert contrast-200 mix-blend-screen' : 'brightness-0 invert'}`}>
+                <div className={cn(
+                  "mx-8 md:mx-16 relative w-32 h-16 md:w-48 md:h-20 opacity-60 hover:opacity-100 transition-opacity",
+                  client.solidBg ? 'grayscale invert contrast-200 mix-blend-screen' : 'brightness-0 invert'
+                )}>
                   <Image src={client.image} alt={client.name} fill className="object-contain" />
                 </div>
               ) : (
@@ -65,7 +60,7 @@ export default function ClientLogos() {
               )}
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

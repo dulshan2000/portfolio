@@ -3,21 +3,18 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
+import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-background to-background z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,168,83,0.05)_0%,transparent_50%)] z-0" />
-
+    <HeroHighlight containerClassName="overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
+          <h2 className="text-white font-medium tracking-[0.2em] uppercase text-sm mb-4">
             VFX Artist · Motion Designer · Director
           </h2>
         </motion.div>
@@ -26,7 +23,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-balance"
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-balance text-white"
         >
           Dulshan Bandara
         </motion.h1>
@@ -35,20 +32,20 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl mb-12"
+          className="text-zinc-400 max-w-2xl mx-auto text-lg md:text-2xl mb-12"
         >
-          Crafting cinematic visual effects and dynamic motion graphics for the broadcast advertising industry.
+          Crafting cinematic visual effects and <Highlight className="text-white">dynamic motion graphics</Highlight> for the broadcast advertising industry.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-4"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.8 }}
+          className="flex flex-col sm:flex-row items-center gap-6"
         >
           <Link
             href="#projects"
-            className="px-8 py-4 bg-primary text-black font-semibold rounded-full hover:bg-primary-hover transition-colors"
+            className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-colors shadow-[0_0_40px_-10px_rgba(255,255,255,0.4)]"
           >
             View My Work
           </Link>
@@ -67,7 +64,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-500"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-zinc-500"
       >
         <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
         <motion.div
@@ -77,6 +74,6 @@ export default function Hero() {
           <ArrowDown className="w-4 h-4" />
         </motion.div>
       </motion.div>
-    </section>
+    </HeroHighlight>
   );
 }
