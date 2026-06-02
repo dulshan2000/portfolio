@@ -30,8 +30,8 @@ export const projects: Project[] = [
       'Kinetic Promotional End-Card: Engineered and fully animated the final brand outro sequence. Utilized bold kinetic typography featuring key phrases like "Instant Delivery", "Affordable", and "Send and Receive", layered over a stylized, fast-moving corporate backdrop to deliver an impactful closing call-to-action.'
     ],
     videos: [
-      '/videos/PickMe Flash Promo Video 1.mp4',
-      '/videos/PickMe Flash Promo Video 2.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/PickMe%20Flash%20Promo%20Video%201.mp4',
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/PickMe%20Flash%20Promo%20Video%202.mp4'
     ]
   },
   {
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       'Final Product Window: Designed, animated, and composited the closing 3D/2D product window, showcasing the fully updated Little Lion range (including the Sponge Cake) over a studio background to deliver a polished, broadcast-ready conclusion.'
     ],
     videos: [
-      '/videos/Little Lion TVC.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Little%20Lion%20TVC.mp4'
     ]
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
       'Promotional End-Card Compositing: Assisted in compositing the comprehensive final brand end-card. Successfully balanced complex promotional terms, official campaign graphics, and a large grid of individual Unilever brand assets into a neat, cohesive visual conclusion.'
     ],
     videos: [
-      '/videos/Keels Smart Family Promo.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Keels%20Smart%20Family%20Promo.mp4'
     ]
   },
   {
@@ -89,7 +89,7 @@ export const projects: Project[] = [
       'Motion Graphics & Outro: Designed and animated an audio-synced, lyric-based collage sequence featuring sliding portrait frames over a vibrant red background. Concluded the commercial by engineering the final brand outro animation, revealing the People\'s Remittance and People\'s Bank logos for a polished finish.'
     ],
     videos: [
-      '/videos/Peoples Remittance TV Commercial.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Peoples%20Remittance%20TV%20Commercial.mp4'
     ]
   },
   {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
       'Brand End-Card: Cleanly integrated the commercial hotline, localized entry pricing, and the Rhino 60 Years brand mark into the final informational end-card.'
     ],
     videos: [
-      '/videos/RBS TVC.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/RBS%20TVC.mp4'
     ]
   },
   {
@@ -128,7 +128,7 @@ export const projects: Project[] = [
       'Animation & Finishing: Utilized Adobe After Effects to animate the final appearance of the Rich Look logo alongside sliding typography detailing multiple store locations (Maharagama, Negombo, Kalutara, Ratnapura, Kottawa). Composited the final sequence to deliver a clean, broadcast-ready conclusion.'
     ],
     videos: [
-      '/videos/Rich Look - A Holiday Filled with Smiles Directors Cut.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Rich%20Look%20-%20A%20Holiday%20Filled%20with%20Smiles%20Directors%20Cut.mp4'
     ]
   },
   {
@@ -146,7 +146,7 @@ export const projects: Project[] = [
       'Motion Graphics & Typography: Brought the localized geometric starburst logo to life through animation. Designed clean transition cuts and synced kinetic typography for the campaign\'s core tagline ("ගැනීමත් simple ගෙවීමත් simple") to anchor the messaging.'
     ],
     videos: [
-      '/videos/Singer Simple Pay TVC.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Singer%20Simple%20Pay%20TVC.mp4'
     ]
   },
   {
@@ -165,7 +165,7 @@ export const projects: Project[] = [
       'Post-Production Delivery: Supported the final pipeline, which included an animated commercial outro showcasing SINGER’s diverse lineup of washing machines, promotional badges, and localized financial details.'
     ],
     videos: [
-      '/videos/Singer Washing Machine TVC.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Singer%20Washing%20Machine%20TVC.mp4'
     ]
   },
   {
@@ -183,7 +183,7 @@ export const projects: Project[] = [
       'Motion Graphics & VFX: Executed all visual effects and stylistic overlays. Seamlessly integrated kinetic typography by animating descriptive words to appear dynamically alongside the talent\'s movements, maximizing the promotional energy.'
     ],
     videos: [
-      '/videos/Sky Films 2.0 Casting Call.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Sky%20Films%202.0%20Casting%20Call.mp4'
     ]
   },
   {
@@ -201,7 +201,7 @@ export const projects: Project[] = [
       'Hyper-Realistic Flavor Visualizations: Designed and composited highly complex, slow-motion 3D motion graphics to visually represent distinct flavor profiles. Simulated the physics of chips, onion rings, red chilies, and tiny salt and pepper particles flying through the air, utilizing precise lighting and compositing against a dark backdrop to ensure the ingredients appeared appetizing and hyper-realistic.'
     ],
     videos: [
-      '/videos/Uswatte Chirpy Chips Documentary.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Uswatte%20Chirpy%20Chips%20Documentary.mp4'
     ]
   },
   {
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       'Final Pack Shot: Engineered the brand\'s closing visual signature by seamlessly integrating 3D modeled assets to display all three flavors (Cheese & Onion, Hot N Spicy, and Salted) alongside floating chip elements.'
     ],
     videos: [
-      '/videos/Uswatte Chirpy Chips TVC.mp4'
+      'https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Uswatte%20Chirpy%20Chips%20TVC.mp4'
     ]
   },
   {
