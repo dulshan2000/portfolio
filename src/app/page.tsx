@@ -11,9 +11,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <AboutContactBento />
         <ProjectGrid />
         <ClientLogos />
-        <AboutContactBento />
       </main>
       <Footer />
     </div>
