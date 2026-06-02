@@ -59,7 +59,7 @@ export default function ClientLogos() {
                   <Image src={client.image} alt={client.name} fill className="object-contain" />
                 </div>
               ) : (
-                <div className="mx-8 md:mx-16 text-2xl md:text-4xl font-display font-bold text-white/20 hover:text-white/60 transition-colors cursor-default">
+                <div className="mx-8 md:mx-16 text-2xl md:text-4xl font-display font-bold text-white opacity-60 hover:opacity-100 transition-opacity cursor-default">
                   {client.name}
                 </div>
               )}
