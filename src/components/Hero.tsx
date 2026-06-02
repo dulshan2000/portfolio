@@ -58,22 +58,22 @@ export default function Hero() {
             Download CV
           </a>
         </motion.div>
-      </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-zinc-500"
-      >
-        <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="mt-20 flex flex-col items-center text-zinc-500"
         >
-          <ArrowDown className="w-4 h-4" />
+          <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDown className="w-4 h-4" />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </HeroHighlight>
   );
 }
