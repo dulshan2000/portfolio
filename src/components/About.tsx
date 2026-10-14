@@ -48,31 +48,35 @@ export default function About() {
             
             <div className="space-y-6 text-gray-400 text-lg">
               <p>
-                I am a Visual Effects and Motion Graphics Artist based in Sri Lanka, specializing in broadcast advertising, promotional campaigns, and brand documentaries.
+                I am a Visual Effects & Composite Artist and Interactive Media undergraduate at SLIIT, based in Sri Lanka and specializing in broadcast advertising, 3D animation, and AI-assisted video content.
               </p>
               <p>
-                Collaborating with leading agencies and production houses like SKY Films International, Litmus, and Holmes Pollard & Stott, I bridge the gap between live-action narratives and highly polished digital realities.
+                Currently creating motion graphics and visual effects at <strong>KML Productions</strong> and formerly at <strong>SKY Films International</strong>, I execute end-to-end post-production pipelines for leading brands including Prime Lands, Home Lands, Uswatte, SINGER, PickMe, and People&apos;s Bank.
               </p>
               <p>
-                From complex 3D product modeling and dynamic physics simulations to seamless green screen integration and stylized motion graphics, I execute end-to-end post-production pipelines that elevate brand storytelling.
+                From 3D modeling and dynamic physics in Blender to precision match-moving, green screen chroma keying, color grading in DaVinci Resolve, and next-gen AI video workflows (Higgsfield, Beeble), I bring technical mastery and cinematic storytelling to every project.
               </p>
             </div>
 
             {/* Toolkit Grid */}
             <div className="mt-12">
               <h4 className="text-sm uppercase tracking-widest text-gray-500 mb-6">Core Toolkit</h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2 hover:border-primary/50 transition-colors">
+                  <span className="font-semibold text-white">After Effects</span>
+                  <span className="text-xs text-gray-500">VFX & Motion Graphics</span>
+                </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2 hover:border-primary/50 transition-colors">
                   <span className="font-semibold text-white">Blender</span>
                   <span className="text-xs text-gray-500">3D Modeling & Anim</span>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2 hover:border-primary/50 transition-colors">
-                  <span className="font-semibold text-white">After Effects</span>
-                  <span className="text-xs text-gray-500">Compositing & VFX</span>
+                  <span className="font-semibold text-white">Premiere & DaVinci</span>
+                  <span className="text-xs text-gray-500">Editing & Color Grading</span>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2 hover:border-primary/50 transition-colors">
-                  <span className="font-semibold text-white">Premiere Pro</span>
-                  <span className="text-xs text-gray-500">Editorial Finishing</span>
+                  <span className="font-semibold text-white">AI Video Tools</span>
+                  <span className="text-xs text-gray-500">Higgsfield & Beeble</span>
                 </div>
               </div>
             </div>

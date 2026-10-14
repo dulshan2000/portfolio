@@ -19,20 +19,42 @@ export default function AboutContactBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-2 row-span-2 rounded-3xl bg-zinc-900/50 border border-white/5 p-8 relative overflow-hidden group hover:border-white/20 transition-colors"
+            className="md:col-span-2 row-span-2 rounded-3xl bg-zinc-900/50 border border-white/5 p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-colors flex flex-col justify-between"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <h3 className="text-zinc-500 tracking-widest uppercase text-xs font-semibold mb-6">About Me</h3>
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-balance text-white leading-tight">
-              Transforming concepts into <span className="text-zinc-500">cinematic realities.</span>
-            </h2>
-            <div className="space-y-4 text-zinc-400 text-base md:text-lg max-w-xl">
-              <p>
-                I am a Visual Effects and Motion Graphics Artist based in Sri Lanka, specializing in broadcast advertising, promotional campaigns, and brand documentaries.
-              </p>
-              <p>
-                Collaborating with leading agencies and production houses, I bridge the gap between live-action narratives and highly polished digital realities.
-              </p>
+            <div>
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <h3 className="text-zinc-500 tracking-widest uppercase text-xs font-semibold">About Me</h3>
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-300 font-medium">
+                  VFX & Composite Artist @ KML Productions
+                </span>
+              </div>
+              
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-balance text-white leading-tight">
+                Transforming concepts into <span className="text-zinc-500">cinematic realities.</span>
+              </h2>
+              
+              <div className="space-y-4 text-zinc-400 text-base md:text-lg max-w-xl">
+                <p>
+                  I am a Visual Effects and Composite Artist and Interactive Media undergraduate at SLIIT, specializing in broadcast advertising, commercial campaigns, and AI-assisted video production.
+                </p>
+                <p>
+                  With hands-on experience spanning KML Productions and SKY Films International, I execute end-to-end post-production pipelines—combining 3D modeling, precision match-moving, rotoscoping, chroma keying, and color grading for leading brands including Prime Lands, Home Lands, Uswatte, SINGER, PickMe, and People&apos;s Bank.
+                </p>
+              </div>
+            </div>
+
+            {/* Quick Experience Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-6 mt-6 border-t border-white/5">
+              <span className="px-3 py-1 rounded-lg bg-white/5 text-xs text-zinc-300">
+                SLIIT Interactive Media (2022–2026)
+              </span>
+              <span className="px-3 py-1 rounded-lg bg-white/5 text-xs text-zinc-300">
+                Cinematography & Lighting Foundation
+              </span>
+              <span className="px-3 py-1 rounded-lg bg-white/5 text-xs text-zinc-300">
+                AI Video & VFX Workflows
+              </span>
             </div>
           </motion.div>
 
@@ -52,8 +74,8 @@ export default function AboutContactBento() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
-               <div className="text-4xl font-display font-bold text-white mb-1">12+</div>
-               <div className="text-xs text-zinc-400 uppercase tracking-wider">Broadcast Projects</div>
+               <div className="text-4xl font-display font-bold text-white mb-1">15+</div>
+               <div className="text-xs text-zinc-400 uppercase tracking-wider">Broadcast Deliverables</div>
             </div>
           </motion.div>
 
@@ -66,20 +88,25 @@ export default function AboutContactBento() {
             className="rounded-3xl bg-zinc-900/50 border border-white/5 p-8 flex flex-col justify-center group hover:border-white/20 transition-colors"
           >
             <h3 className="text-zinc-500 tracking-widest uppercase text-xs font-semibold mb-6">Core Toolkit</h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-white">Blender</span>
-                <span className="text-xs text-zinc-500">3D</span>
-              </div>
-              <div className="h-px w-full bg-white/5" />
+            <div className="space-y-3.5">
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-white">After Effects</span>
-                <span className="text-xs text-zinc-500">VFX</span>
+                <span className="text-xs text-zinc-400">VFX & Compositing</span>
               </div>
               <div className="h-px w-full bg-white/5" />
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-white">Premiere Pro</span>
-                <span className="text-xs text-zinc-500">Edit</span>
+                <span className="font-semibold text-white">Blender</span>
+                <span className="text-xs text-zinc-400">3D & Tracking</span>
+              </div>
+              <div className="h-px w-full bg-white/5" />
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-white">Premiere & DaVinci</span>
+                <span className="text-xs text-zinc-400">Edit & Color Grade</span>
+              </div>
+              <div className="h-px w-full bg-white/5" />
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-white">AI Video & VFX</span>
+                <span className="text-xs text-zinc-400">Higgsfield & Beeble</span>
               </div>
             </div>
           </motion.div>

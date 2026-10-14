@@ -15,7 +15,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-white font-medium tracking-[0.2em] uppercase text-sm mb-4">
-            VFX Artist · Motion Designer · Director
+            VFX & Composite Artist · Motion Designer · Video Editor
           </h2>
         </motion.div>
 
@@ -34,7 +34,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-zinc-400 max-w-2xl mx-auto text-lg md:text-2xl mb-12"
         >
-          Crafting cinematic visual effects and <Highlight className="text-white">dynamic motion graphics</Highlight> for the broadcast advertising industry.
+          Crafting broadcast-quality visual effects, 3D animations, and <Highlight className="text-white">AI-assisted video content</Highlight> for national commercial campaigns.
         </motion.p>
 
         <motion.div

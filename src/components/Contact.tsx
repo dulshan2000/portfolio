@@ -28,14 +28,14 @@ export default function Contact() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center flex-wrap gap-6 mb-16">
             <a
-              href="tel:+940763349851"
+              href="tel:+94763349851"
               className="px-8 py-4 bg-primary text-black font-semibold rounded-full hover:bg-primary-hover transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               <Phone className="w-5 h-5" />
-              +94 076 334 9851
+              +94 76 33 49 851
             </a>
             <a
-              href="mailto:dulshanbandara@example.com" // Update with real email if available
+              href="mailto:dulshanhareendra@gmail.com"
               className="px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               <Mail className="w-5 h-5" />

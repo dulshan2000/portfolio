@@ -30,18 +30,18 @@ export default function ContactBento() {
             </div>
             <div className="flex flex-col gap-4 w-full sm:w-auto shrink-0">
                <a
-                href="mailto:dulshanbandara@example.com"
+                href="mailto:dulshanhareendra@gmail.com"
                 className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 shadow-[0_0_30px_-10px_rgba(255,255,255,0.3)]"
               >
                 <Mail className="w-5 h-5" />
                 Email Me
               </a>
               <a
-                href="tel:+940763349851"
+                href="tel:+94763349851"
                 className="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                +94 076 334 9851
+                +94 76 33 49 851
               </a>
             </div>
           </motion.div>

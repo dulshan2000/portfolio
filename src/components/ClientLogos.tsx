@@ -10,6 +10,9 @@ type Client = {
 };
 
 const clients: Client[] = [
+  { name: "KML Productions" },
+  { name: "Prime Lands" },
+  { name: "Home Lands" },
   { name: "SKY Films" },
   { name: "SINGER", image: "/logos/singer-3-logo-svg-vector.png" },
   { name: "PickMe", image: "/logos/PickMe-Logo_Two-tone_Transparent-300x129.png" },

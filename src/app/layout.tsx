@@ -13,8 +13,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Dulshan Bandara | VFX & Motion Graphics Artist",
-  description: "Portfolio of Dulshan Bandara, a VFX Artist, Motion Graphics Designer, and Director based in Sri Lanka.",
+  title: "Dulshan Bandara | VFX & Composite Artist · Motion Designer",
+  description: "Portfolio of Dulshan Bandara, a VFX & Composite Artist, Video Editor, and Interactive Media specialist based in Sri Lanka.",
 };
 
 export default function RootLayout({
