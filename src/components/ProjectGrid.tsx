@@ -26,8 +26,8 @@ export default function ProjectGrid() {
             </h2>
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-2">
+          {/* Filters & Archive Button */}
+          <div className="flex flex-wrap items-center gap-2">
             {categories.map((category) => (
               <button
                 key={category}
@@ -41,6 +41,16 @@ export default function ProjectGrid() {
                 {category}
               </button>
             ))}
+
+            <a
+              href="https://drive.google.com/drive/folders/1QjmPmcbtumfi0bxWiI4cRIe-fToJtZPl?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full text-sm border border-white/20 bg-white/5 text-white hover:bg-white hover:text-black transition-all flex items-center gap-1.5 font-medium ml-1 group shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]"
+            >
+              <span>Full Archive</span>
+              <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-black transition-colors" />
+            </a>
           </div>
         </div>
 
