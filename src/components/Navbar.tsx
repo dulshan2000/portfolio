@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -39,6 +40,15 @@ export default function Navbar() {
           <Link href="#projects" className="hover:text-primary transition-colors">
             Projects
           </Link>
+          <a
+            href="https://drive.google.com/drive/folders/1QjmPmcbtumfi0bxWiI4cRIe-fToJtZPl?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors flex items-center gap-1 group"
+          >
+            <span>Full Archive</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+          </a>
           <Link href="#contact" className="hover:text-primary transition-colors">
             Contact
           </Link>
