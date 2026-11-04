@@ -327,7 +327,7 @@ export default function Hero() {
                 <span className="w-1.5 h-1.5 rounded-full bg-rec-crimson rec-live"></span>
                 COLOMBO, SRI LANKA
               </span>
-              <span className="hidden sm:inline text-border-hairline">//</span>
+              <span className="hidden sm:inline text-border-hairline">{"//"}</span>
               <span className="text-text-muted tracking-[0.18em]">
                 COMMERCIAL PRODUCTION &amp; POST-PRODUCTION
               </span>
