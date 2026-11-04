@@ -85,7 +85,8 @@ export default function Navbar() {
         <div className="flex items-center gap-space-sm shrink-0">
           <a
             href="/files/cv.pdf"
-            download="Dulshan_Bandara_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-panel border border-border-hairline hover:border-chroma-cyan transition-colors"
           >
             <span className="material-symbols-outlined text-chroma-cyan text-[16px]">
