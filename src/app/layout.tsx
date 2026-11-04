@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Syne, Plus_Jakarta_Sans, JetBrains_Mono, Unbounded } from "next/font/google";
 import { deliverables } from "@/data/deliverables";
 import "./globals.css";
 
@@ -9,6 +9,13 @@ const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
+  display: "swap",
+});
+
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
   display: "swap",
 });
 
@@ -280,7 +287,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${syne.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-anamorphic-amber selection:text-surface-container-lowest`}
+        className={`${syne.variable} ${unbounded.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-anamorphic-amber selection:text-surface-container-lowest`}
       >
         <div className="film-grain"></div>
         {children}

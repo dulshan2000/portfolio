@@ -333,12 +333,10 @@ export default function Hero() {
             </div>
 
             {/* Monumental Artist Name Title */}
-            <h1 className="font-display text-[2.35rem] sm:text-6xl lg:text-[72px] xl:text-[82px] leading-[0.94] tracking-[-0.03em] font-extrabold uppercase text-text-primary drop-shadow-lg">
-              DULSHAN{" "}
-              <span className="bg-gradient-to-r from-text-primary via-anamorphic-amber to-chroma-cyan bg-clip-text text-transparent">
-                BANDARA
-              </span>
-              <span className="text-rec-crimson">.</span>
+            <h1 className="text-[2.1rem] sm:text-5xl lg:text-[62px] xl:text-[72px] leading-[1.02] tracking-[-0.03em] font-black uppercase drop-shadow-[0_8px_24px_rgba(0,0,0,0.65)]">
+              <span className="hero-name-gradient block">DULSHAN</span>
+              <span className="hero-name-gradient inline">BANDARA</span>
+              <span className="font-hero text-rec-crimson">.</span>
             </h1>
 
             {/* Secondary Role & Discipline Architecture */}
