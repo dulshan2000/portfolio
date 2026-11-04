@@ -141,7 +141,7 @@ export default function SoloDirectionTriptych({
             </div>
           </div>
 
-          {/* Reel 2: Center Elevated & Highlighted with Amber Rim Glow */}
+          {/* Reel 2: Wok Fire & Split-Screen Burger */}
           <div
             role="button"
             tabIndex={0}
@@ -151,13 +151,11 @@ export default function SoloDirectionTriptych({
             onBlur={() => setActiveReelHover(null)}
             onClick={() => reel2 && onSelectDeliverable?.(reel2)}
             onKeyDown={(e) => handleCardKeyDown(e, reel2)}
-            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm sm:-translate-y-3 shadow-xl shadow-anamorphic-amber/10 border-2 border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
+            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
               activeReelHover && activeReelHover !== "reel2" ? "opacity-65" : "opacity-100"
             }`}
           >
-            {/* Anamorphic Amber Rim Indicator */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-anamorphic-amber z-20" />
-
+            {/* Hover Preview Video */}
             <div className="absolute inset-0 z-0 overflow-hidden">
               <HoverVideoPreview
                 src="/videos/ISSO BOGO 1.mp4"
@@ -172,25 +170,39 @@ export default function SoloDirectionTriptych({
 
             {/* Reel Top HUD */}
             <div className="relative z-10 flex items-center justify-between font-telemetry-sm uppercase">
-              <span className="px-space-xs py-0.5 bg-anamorphic-amber text-surface-container-lowest font-bold">
-                HERO REEL 02
+              <span className="px-space-xs py-0.5 bg-surface-panel text-anamorphic-amber border border-border-hairline">
+                REEL 02
               </span>
-              <span className="text-rec-crimson flex items-center gap-1 font-semibold text-[11px] bg-surface-elevated/85 px-1.5 py-0.5 border border-border-hairline">
-                <span className="w-2 h-2 rounded-full bg-rec-crimson rec-live"></span>{" "}
-                {activeReelHover === "reel2" ? "PREVIEWING" : "4K REC"}
+              <span className="px-1.5 py-0.5 bg-surface-elevated/85 border border-border-hairline text-[10px] flex items-center gap-1">
+                <span
+                  className={`w-1.5 h-1.5 rounded-full ${
+                    activeReelHover === "reel2"
+                      ? "bg-rec-crimson rec-live"
+                      : "bg-text-muted"
+                  }`}
+                />
+                <span
+                  className={
+                    activeReelHover === "reel2"
+                      ? "text-anamorphic-amber font-bold"
+                      : "text-text-muted"
+                  }
+                >
+                  {activeReelHover === "reel2" ? "PREVIEWING" : "HOVER"}
+                </span>
               </span>
             </div>
 
             {/* Reel Bottom Info */}
             <div className="relative z-10 flex flex-col gap-space-xs">
               <div className="flex flex-wrap gap-1 font-telemetry-sm text-[10px] uppercase">
-                <span className="px-1 py-0.5 bg-surface-panel text-anamorphic-amber font-semibold border border-anamorphic-amber/40">
+                <span className="px-1 py-0.5 bg-surface-panel text-chroma-cyan border border-border-hairline">
                   Tabletop DOP
                 </span>
-                <span className="px-1 py-0.5 bg-surface-panel text-chroma-cyan border border-border-hairline">
+                <span className="px-1 py-0.5 bg-surface-panel text-text-primary border border-border-hairline">
                   Split-Screen Edit
                 </span>
-                <span className="px-1 py-0.5 bg-surface-panel text-text-primary border border-border-hairline">
+                <span className="px-1 py-0.5 bg-surface-panel text-anamorphic-amber border border-border-hairline">
                   DaVinci Color Grade
                 </span>
                 <span className="px-1 py-0.5 bg-surface-panel text-text-muted border border-border-hairline">
@@ -206,8 +218,8 @@ export default function SoloDirectionTriptych({
                 Slow-motion wok flame cinematography, synchronized dual split-screen burger assembly, rich culinary color grading in DaVinci Resolve, and smooth orbital camera movement.
               </p>
 
-              <span className="mt-1 w-full py-1.5 bg-anamorphic-amber group-hover:bg-white text-surface-container-lowest font-telemetry-sm text-[10px] font-bold uppercase transition-colors flex items-center justify-center gap-1">
-                <span>Inspect Hero Reel 02</span>
+              <span className="mt-1 w-full py-1.5 bg-surface-panel/90 group-hover:bg-anamorphic-amber group-hover:text-black text-text-primary font-telemetry-sm text-[10px] uppercase transition-colors border border-border-hairline flex items-center justify-center gap-1">
+                <span>Inspect Reel 02</span>
                 <span className="material-symbols-outlined text-[13px]">
                   play_arrow
                 </span>
@@ -225,7 +237,7 @@ export default function SoloDirectionTriptych({
             onBlur={() => setActiveReelHover(null)}
             onClick={() => reel3 && onSelectDeliverable?.(reel3)}
             onKeyDown={(e) => handleCardKeyDown(e, reel3)}
-            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-chroma-cyan/60 transition-all duration-300 cursor-pointer ${
+            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
               activeReelHover && activeReelHover !== "reel3" ? "opacity-65" : "opacity-100"
             }`}
           >
@@ -243,7 +255,7 @@ export default function SoloDirectionTriptych({
 
             {/* Reel Top HUD */}
             <div className="relative z-10 flex items-center justify-between font-telemetry-sm uppercase">
-              <span className="px-space-xs py-0.5 bg-surface-panel text-chroma-cyan border border-border-hairline">
+              <span className="px-space-xs py-0.5 bg-surface-panel text-anamorphic-amber border border-border-hairline">
                 REEL 03
               </span>
               <span className="px-1.5 py-0.5 bg-surface-elevated/85 border border-border-hairline text-[10px] flex items-center gap-1">
@@ -257,7 +269,7 @@ export default function SoloDirectionTriptych({
                 <span
                   className={
                     activeReelHover === "reel3"
-                      ? "text-chroma-cyan font-bold"
+                      ? "text-anamorphic-amber font-bold"
                       : "text-text-muted"
                   }
                 >
@@ -269,13 +281,13 @@ export default function SoloDirectionTriptych({
             {/* Reel Bottom Info */}
             <div className="relative z-10 flex flex-col gap-space-xs">
               <div className="flex flex-wrap gap-1 font-telemetry-sm text-[10px] uppercase">
-                <span className="px-1 py-0.5 bg-surface-panel text-text-primary border border-border-hairline">
+                <span className="px-1 py-0.5 bg-surface-panel text-chroma-cyan border border-border-hairline">
                   DOP &amp; Slow-Mo
                 </span>
-                <span className="px-1 py-0.5 bg-surface-panel text-anamorphic-amber border border-border-hairline">
+                <span className="px-1 py-0.5 bg-surface-panel text-text-primary border border-border-hairline">
                   DaVinci Color Grade
                 </span>
-                <span className="px-1 py-0.5 bg-surface-panel text-chroma-cyan border border-border-hairline">
+                <span className="px-1 py-0.5 bg-surface-panel text-anamorphic-amber border border-border-hairline">
                   Roto Typography
                 </span>
                 <span className="px-1 py-0.5 bg-surface-panel text-text-muted border border-border-hairline">
@@ -291,7 +303,7 @@ export default function SoloDirectionTriptych({
                 High-speed wok toss capturing airborne kottu and prawns, foreground plate rotoscoping with 3D Z-space &apos;PRAWN KOTTU 2095/=&apos; typography, and AI-generated end-card.
               </p>
 
-              <span className="mt-1 w-full py-1.5 bg-surface-panel/90 group-hover:bg-chroma-cyan group-hover:text-black text-text-primary font-telemetry-sm text-[10px] uppercase transition-colors border border-border-hairline flex items-center justify-center gap-1">
+              <span className="mt-1 w-full py-1.5 bg-surface-panel/90 group-hover:bg-anamorphic-amber group-hover:text-black text-text-primary font-telemetry-sm text-[10px] uppercase transition-colors border border-border-hairline flex items-center justify-center gap-1">
                 <span>Inspect Reel 03</span>
                 <span className="material-symbols-outlined text-[13px]">
                   play_arrow
