@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-surface-elevated border-t border-border-hairline py-space-xl">
@@ -49,6 +51,13 @@ export default function Footer() {
         {/* Bottom Metadata & Social Links */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md pt-space-sm font-telemetry-sm text-telemetry-sm">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-space-sm text-text-muted">
+            <Image
+              src="/images/logo.png"
+              alt="Dulshan Bandara Logo"
+              width={1054}
+              height={703}
+              className="h-6 w-auto object-contain"
+            />
             <span>© 2026 DULSHAN BANDARA. ALL RIGHTS RESERVED.</span>
             <span className="hidden sm:inline text-border-hairline">/</span>
             <a

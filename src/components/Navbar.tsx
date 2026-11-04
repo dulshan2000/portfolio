@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavItem {
   id: string;
@@ -47,9 +48,14 @@ export default function Navbar() {
         {/* Brand / Logo */}
         <div className="flex items-center gap-space-md shrink-0">
           <Link href="#showreel" className="flex items-center gap-space-xs group">
-            <span className="font-display text-2xl font-extrabold tracking-tighter text-text-primary uppercase group-hover:text-white transition-colors">
-              DB<span className="text-anamorphic-amber">.</span>
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="Dulshan Bandara Logo"
+              width={1054}
+              height={703}
+              priority
+              className="h-8 sm:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+            />
           </Link>
 
           {/* Telemetry Status Strip */}
