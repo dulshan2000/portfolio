@@ -1,43 +1,206 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  
-  --color-primary: #ffffff; /* Monochrome primary */
-  --color-primary-hover: #a1a1aa; /* Zinc 400 */
-  
-  --color-accent: #3b82f6; /* Electric Blue highlight */
-  
-  --color-card: #09090b; /* Zinc 950 */
-  --color-card-hover: #18181b; /* Zinc 900 */
-  
-  --color-border: #27272a; /* Zinc 800 */
+  --color-surface: #131316;
+  --color-surface-dim: #131316;
+  --color-surface-bright: #39393b;
+  --color-surface-container-lowest: #0e0e10;
+  --color-surface-container-low: #1c1b1e;
+  --color-surface-container: #201f22;
+  --color-surface-container-high: #2a2a2c;
+  --color-surface-container-highest: #353437;
+  --color-on-surface: #e5e1e5;
+  --color-on-surface-variant: #d8c3ad;
+  --color-inverse-surface: #e5e1e5;
+  --color-inverse-on-surface: #313033;
+  --color-outline: #a08e7a;
+  --color-outline-variant: #534434;
+  --color-surface-tint: #ffb95f;
+  --color-primary: #ffc174;
+  --color-on-primary: #472a00;
+  --color-primary-container: #f59e0b;
+  --color-on-primary-container: #613b00;
+  --color-inverse-primary: #855300;
+  --color-secondary: #4cd7f6;
+  --color-on-secondary: #003640;
+  --color-secondary-container: #03b5d3;
+  --color-on-secondary-container: #00424e;
+  --color-tertiary: #ffbcb7;
+  --color-on-tertiary: #68000a;
+  --color-tertiary-container: #ff938c;
+  --color-on-tertiary-container: #8d0012;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-background: #131316;
+  --color-on-background: #e5e1e5;
+  --color-surface-variant: #353437;
+  --color-surface-elevated: #111216;
+  --color-surface-panel: #17181f;
+  --color-border-hairline: rgba(255, 255, 255, 0.08);
+  --color-border-active: rgba(245, 158, 11, 0.4);
+  --color-text-primary: #f4f4f5;
+  --color-text-muted: #71717a;
+  --color-rec-crimson: #ef4444;
+  --color-anamorphic-amber: #f59e0b;
+  --color-chroma-cyan: #06b6d4;
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
+  --font-display: var(--font-syne), "Syne", sans-serif;
+  --font-body: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+  --font-telemetry: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
 
-  --animate-marquee: marquee 30s linear infinite;
-
-  @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-  }
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-2xl: 4rem;
+  --spacing-gutter: 1rem;
+  --spacing-gutter-desktop: 1.5rem;
+  --spacing-margin: 1rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-margin-desktop: 3rem;
 }
 
 @layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0e0e10;
+    --foreground: #e5e1e5;
   }
 
+  html,
   body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e10;
+    color: #e5e1e5;
+    font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
   }
+
+  /* Zero corner radius requirement from DESIGN.md while preserving circular status dots */
+  *:not(.rounded-full) {
+    border-radius: 0 !important;
+  }
+}
+
+/* Custom Typography Helpers adhering to DESIGN.md */
+.font-display-xl {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 5rem;
+  letter-spacing: -0.04em;
+}
+
+.font-display-xl-mobile {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 3rem;
+  letter-spacing: -0.03em;
+}
+
+.font-headline-lg {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  letter-spacing: -0.02em;
+}
+
+.font-headline-md {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  letter-spacing: -0.01em;
+}
+
+.font-body-lg {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+}
+
+.font-body-md {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.font-body-sm {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.font-telemetry-lg {
+  font-family: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.font-telemetry-sm {
+  font-family: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 0.875rem;
+  letter-spacing: 0.12em;
+}
+
+/* ARRI HUD & Telemetry Blinking */
+@keyframes recBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.rec-live {
+  animation: recBlink 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rec-live {
+    animation: none;
+  }
+}
+
+/* Calibrated Dark Suite Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353437;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Subtle Film Grain Overlay */
@@ -48,39 +211,7 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 50;
-  opacity: 0.03;
+  z-index: 99;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Hide scrollbar for clean look */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@layer utilities {
-  .bg-dot-thick-neutral-800 {
-    background-image: radial-gradient(#262626 2px, transparent 2px);
-    background-size: 24px 24px;
-  }
-  .bg-dot-thick-indigo-500 {
-    background-image: radial-gradient(#6366f1 2px, transparent 2px);
-    background-size: 24px 24px;
-  }
 }

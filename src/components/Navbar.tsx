@@ -2,66 +2,139 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+
+interface NavItem {
+  id: string;
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { id: "showreel", label: "[01. Showreel]", href: "#showreel" },
+  { id: "flagships", label: "[02. VFX Flagships]", href: "#flagships" },
+  { id: "dop-and-color", label: "[03. DOP & Color (9:16)]", href: "#dop-and-color" },
+  { id: "broadcast-vault", label: "[04. Broadcast Vault (22)]", href: "#broadcast-vault" },
+  { id: "pipeline", label: "[05. Pipeline]", href: "#pipeline" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("showreel");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const scrollPos = window.scrollY + 200;
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(item.id);
+            break;
+          }
+        }
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/70 backdrop-blur-md border-b border-white/5 py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="text-xl font-display font-bold tracking-wider">
-          DB<span className="text-primary">.</span>
-        </Link>
+    <header className="fixed top-0 left-0 w-full z-50 bg-surface-elevated/90 backdrop-blur-md border-b border-border-hairline">
+      <div className="h-16 w-full px-space-md lg:px-margin-desktop flex items-center justify-between gap-space-md">
+        {/* Brand / Logo */}
+        <div className="flex items-center gap-space-md shrink-0">
+          <Link href="#showreel" className="flex items-center gap-space-xs group">
+            <span className="font-display text-2xl font-extrabold tracking-tighter text-text-primary uppercase group-hover:text-white transition-colors">
+              DB<span className="text-anamorphic-amber">.</span>
+            </span>
+          </Link>
 
-        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-          <Link href="#about" className="hover:text-primary transition-colors">
-            About
-          </Link>
-          <Link href="#projects" className="hover:text-primary transition-colors">
-            Projects
-          </Link>
-          <a
-            href="https://drive.google.com/drive/folders/1QjmPmcbtumfi0bxWiI4cRIe-fToJtZPl?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors flex items-center gap-1 group"
-          >
-            <span>Full Archive</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-          </a>
-          <Link href="#contact" className="hover:text-primary transition-colors">
-            Contact
-          </Link>
+          {/* Telemetry Status Strip */}
+          <div className="hidden xl:flex items-center gap-space-xs px-space-sm py-0.5 bg-surface-panel border border-border-hairline">
+            <span className="w-2 h-2 rounded-full bg-rec-crimson rec-live inline-block"></span>
+            <span className="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-text-muted">
+              REC | SRI LANKA — VFX &amp; COMPOSITE ARTIST · DOP · EDITOR · COLORIST
+            </span>
+          </div>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-space-xs font-telemetry-sm text-telemetry-sm uppercase">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={item.href}
+                className={`px-space-sm py-1.5 transition-colors border ${
+                  isActive
+                    ? "bg-surface-panel text-anamorphic-amber border-border-active"
+                    : "text-text-muted hover:text-text-primary hover:bg-surface-panel border-transparent"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Right Action Cluster */}
+        <div className="flex items-center gap-space-sm shrink-0">
           <a
             href="/files/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-black transition-all"
+            download="Dulshan_Bandara_CV.pdf"
+            className="group relative inline-flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-panel border border-border-hairline hover:border-chroma-cyan transition-colors"
           >
-            Download CV
+            <span className="material-symbols-outlined text-chroma-cyan text-[16px]">
+              download
+            </span>
+            <span className="font-telemetry-sm text-telemetry-sm uppercase text-text-primary tracking-widest">
+              Download CV [PDF]
+            </span>
           </a>
+
+          {/* Mobile menu toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-1.5 bg-surface-panel border border-border-hairline text-text-muted hover:text-text-primary"
+            aria-label="Toggle navigation menu"
+          >
+            <span className="material-symbols-outlined text-[20px]">
+              {mobileMenuOpen ? "close" : "menu"}
+            </span>
+          </button>
         </div>
       </div>
-    </motion.nav>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden w-full bg-surface-elevated border-b border-border-hairline px-space-md py-space-sm flex flex-col gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`px-space-sm py-2 font-telemetry-sm uppercase text-xs transition-colors border ${
+                activeSection === item.id
+                  ? "bg-surface-panel text-anamorphic-amber border-border-active"
+                  : "text-text-muted hover:text-text-primary hover:bg-surface-panel border-transparent"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+          <div className="pt-2 border-t border-border-hairline flex items-center justify-between text-telemetry-sm text-text-muted">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-rec-crimson rec-live"></span>
+              SRI LANKA
+            </span>
+            <span className="text-chroma-cyan">AVAILABLE</span>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

@@ -1,0 +1,52 @@
+# Dulshan Bandara — Official Portfolio & Entity Profile
+
+> **Canonical Website:** https://dulshan.qzz.io
+> **Full Name:** Dulshan Bandara (Dulshan Hareendra Bandara)
+> **Roles:** VFX & Composite Artist · Commercial Director of Photography (DOP) · Video Editor · Colorist · 3D & Motion Graphics Artist
+> **Location:** Colombo, Sri Lanka
+> **Email:** dulshanhareendra@gmail.com
+> **Phone / WhatsApp:** +94 76 33 49 851
+> **CV / Resume (PDF):** https://dulshan.qzz.io/files/cv.pdf
+> **LinkedIn:** https://www.linkedin.com/in/dulshan-bandara
+> **Instagram:** https://www.instagram.com/dulshan_bandara
+> **Behance:** https://www.behance.net/dulshanhareend
+
+## Biography & Summary
+Dulshan Bandara is a Sri Lankan VFX & Composite Artist, Commercial Director of Photography (DOP), Video Editor, and DaVinci Resolve Colorist. He executes the complete commercial production and post-production pipeline—from on-location tabletop and studio cinematography, lighting, editing, and color grading in DaVinci Resolve to Blender 3D modeling & physics simulations, After Effects 3D camera tracking & compositing, and AI-assisted video workflows (Higgsfield, Beeble, InVideo, Figma Weave).
+
+## Career & Academic Credentials
+- **Commercial DOP, Editor, Colorist & VFX Artist** — Direct Commercial & Agency Productions (2024 – Present): Directing and executing solo end-to-end commercial campaigns, tabletop food cinematography, DaVinci Resolve color grading, 3D visualizers, and AI-assisted video workflows.
+- **VFX Artist** — Sky Films International, Nugegoda, Sri Lanka (Jun 2024 – Mar 2025): Delivered broadcast-quality VFX, 3D modeling in Blender, chroma keying, 3D tracking, and motion graphics for national television commercials including People's Bank, Uswatte Chirpy Chips, SINGER, PickMe Flash, Little Lion, Rich Look, Eva, and Unilever.
+- **BSc (Hons) in Information Technology – Specialising in Interactive Media** — Sri Lanka Institute of Information Technology (SLIIT), Malabe (2022 – 2026).
+
+## Technical Pipeline & Core Skills
+1. **Cinematography & Lighting (DOP):** Tabletop food cinematography, studio spotlight framing, high-speed slow-motion capture.
+2. **Video Editing & Color Grading:** DaVinci Resolve (Rec.709 commercial grading), Adobe Premiere Pro (rhythmic editing, split-screens, bilingual subtitle localization).
+3. **VFX & Compositing:** Adobe After Effects & Blender (3D camera tracking, match-moving, green screen chroma keying, rotoscoping, screen & sky replacements).
+4. **3D Modeling & Simulations:** Blender (3D environments, product packaging, atmospheric meteor fire/smoke simulations, fluid & particle simulations).
+5. **Motion Graphics & End Cards:** Kinetic typography, 3D/2D product windows, architectural wireframe reveals, brand idents.
+6. **AI Video & Relighting Workflows:** Higgsfield, Beeble (SwitchX relighting), InVideo, Figma Weave.
+
+## Cataloged Broadcast Commercial Deliverables (22 Projects)
+1. **People's Bank — "People's Remittance" TVC:** VFX Compositor, 3D & Motion Graphics Artist (Blender 3D office & ATM vestibule, After Effects chroma key & screen replacement).
+2. **Uswatte Chirpy Chips — "රිදෙන්න දැනෙන රස" TVC:** VFX Artist (Blender 3D product packaging, dynamic potato slicing & spice particle sims, packshot compositing).
+3. **Uswatte Chirpy Chips — Brand Documentary:** VFX Artist (3D potato meteor atmospheric entry with fire/smoke sims, physics tumbling, slow-mo spice particles).
+4. **SINGER Simple Pay — TV Commercial:** VFX Artist (Fluid particle simulations materializing 3D living room furniture, 3D camera tracking).
+5. **SINGER Washing Machines — TV Commercial (Ogilvy Digital):** VFX Assistant (Window tracking, color optimization, product lineup outro).
+6. **PickMe Flash — TV Commercials (Spots 1 & 2):** VFX & Motion Graphics Artist (3D vehicle branding match-move on moving scooters/three-wheelers, UI explainer overlays).
+7. **Little Lion — TV Commercial (Holmes Pollard & Stott):** VFX Artist (Blender 3D packaging modernization tracked onto live-action actor hands without reshoots).
+8. **Keells Smart Family Promo (Season 7) — Unilever & Keells Super TVC:** VFX Artist (Tracked shelf pop-up brand logos, split-screen transitions, Unilever brand grid outro).
+9. **ISSO Colombo City Centre — Pittu & Jaffna Crab Curry (9:16 Reel):** DOP, Editor, Colorist & AI Video Artist.
+10. **ISSO Colombo City Centre — Wok Fire & Split-Screen Burger (9:16 4K Reel):** Tabletop DOP, Editor & Colorist.
+11. **ISSO Colombo City Centre — Prawn Kottu 2095/= Launch (9:16 Reel):** DOP, Editor, Colorist & VFX Artist.
+12. **Sky Films 2.0 — Casting Call Commercial:** Director, DOP, Editor & VFX Artist.
+13. **Rich Look — "A Holiday Filled With Smiles" Campaign:** VFX Artist.
+14. **Eva — Men's Day / Father's Day Documentary:** VFX Artist & Editor.
+15. **Prime Marina Phase 1 & 2 (Prime Lands):** VFX & Composite Artist (Main walkthrough, 4K architectural end cards, drone clean-up).
+16. **Central Park Boulevard (Prime Lands / Port City Colombo):** 3D Artist & Compositor (Blender 3D wireframe mesh reveal tracked onto aerial plates).
+17. **Location Advantage V1 & V3 (Prime Lands):** VFX & Composite Artist (Sky replacement, motion-tracked highway/landmark pins).
+18. **RBS Cement Panel — Rhino Roofing TV Commercial:** 3D & VFX Artist (Blender 3D modular house assembly & technical explainer).
+19. **Celebrity & Brand VFX Composites (Mahela Jayawardene, Jacqueline Fernandez, Bathiya):** VFX & AI Composite Artist (SwitchX AI relighting, balcony set extensions).
+20. **Rush City Logo Animation:** Motion Graphics & VFX Artist.
+21. **Samsara Residencies Logo Animation:** Motion Graphics Artist.
+22. **SLIIT Convocation Guidelines — Motion Graphics Explainer:** Motion Graphics Artist & Video Editor.
