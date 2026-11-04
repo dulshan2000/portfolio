@@ -323,8 +323,7 @@ export default function Hero() {
           <div className="flex flex-col max-w-3xl">
             {/* Overline Location & Availability */}
             <div className="flex flex-wrap items-center gap-2 font-telemetry-sm text-[10px] sm:text-xs uppercase tracking-[0.22em] text-text-muted mb-3">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-surface-panel/90 border border-border-hairline text-anamorphic-amber font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-rec-crimson rec-live"></span>
+              <span className="inline-flex items-center px-2.5 py-0.5 bg-surface-panel/90 border border-border-hairline text-anamorphic-amber font-semibold">
                 COLOMBO, SRI LANKA
               </span>
               <span className="hidden sm:inline text-border-hairline">{"//"}</span>
