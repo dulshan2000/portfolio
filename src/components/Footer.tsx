@@ -59,10 +59,10 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex items-center gap-space-md uppercase font-telemetry-sm text-telemetry-sm tracking-widest">
+          <div className="flex flex-wrap items-center gap-space-md uppercase font-telemetry-sm text-telemetry-sm tracking-widest">
             <a
               className="text-text-muted hover:text-chroma-cyan transition-colors"
-              href="https://www.linkedin.com/in/dulshan-bandara"
+              href="https://www.linkedin.com/in/dulshan-bandara/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -85,6 +85,24 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               Instagram
+            </a>
+            <span className="text-border-hairline">/</span>
+            <a
+              className="text-text-muted hover:text-chroma-cyan transition-colors"
+              href="https://web.facebook.com/dulshan.bandara.69"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+            <span className="text-border-hairline">/</span>
+            <a
+              className="text-text-muted hover:text-chroma-cyan transition-colors"
+              href="https://github.com/dulshan2000"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
             </a>
           </div>
         </div>
