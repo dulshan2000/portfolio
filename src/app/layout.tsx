@@ -164,13 +164,12 @@ const jsonLdGraph = {
       ],
       knowsLanguage: ["English", "Sinhala"],
       sameAs: [
-        "https://www.linkedin.com/in/dulshan-bandara/",
+        "https://www.linkedin.com/in/dulshan-bandara",
         "https://www.instagram.com/dulshan_bandara",
         "https://www.behance.net/dulshanhareend",
-        "https://web.facebook.com/dulshan.bandara.69",
+        "https://www.facebook.com/share/1Q9XQeBVrd/",
         "https://www.facebook.com/dulshan.bandara.69",
         "https://github.com/dulshan2000",
-        "https://www.tiktok.com/@dulshan.bandara",
       ],
     },
     {
