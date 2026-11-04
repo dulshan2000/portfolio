@@ -53,8 +53,8 @@ export default function SoloDirectionTriptych({
 
       {/* Layout: Left 65% Triptych Reels, Right 35% Skills & Director Spotlight */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
-        {/* LEFT 65% (Cols 1-8): The 3 Smartphone 9:16 Vertical Frames */}
-        <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-space-md items-center">
+        {/* LEFT 65% (Cols 1-8): The 3 Smartphone 9:16 Vertical Frames (Horizontal Swipe Carousel on Mobile, 3-Column Grid on Tablet/Desktop) */}
+        <div className="lg:col-span-8 flex sm:grid sm:grid-cols-3 gap-space-md items-stretch sm:items-center overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-2 sm:pb-0 no-scrollbar">
           {/* Reel 1: Pittu with Jaffna Crab Curry */}
           <div
             role="button"
@@ -65,7 +65,7 @@ export default function SoloDirectionTriptych({
             onBlur={() => setActiveReelHover(null)}
             onClick={() => reel1 && onSelectDeliverable?.(reel1)}
             onKeyDown={(e) => handleCardKeyDown(e, reel1)}
-            className={`relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
+            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
               activeReelHover && activeReelHover !== "reel1" ? "opacity-65" : "opacity-100"
             }`}
           >
@@ -151,7 +151,7 @@ export default function SoloDirectionTriptych({
             onBlur={() => setActiveReelHover(null)}
             onClick={() => reel2 && onSelectDeliverable?.(reel2)}
             onKeyDown={(e) => handleCardKeyDown(e, reel2)}
-            className={`relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm sm:-translate-y-3 shadow-xl shadow-anamorphic-amber/10 border-2 border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
+            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm sm:-translate-y-3 shadow-xl shadow-anamorphic-amber/10 border-2 border-anamorphic-amber/60 transition-all duration-300 cursor-pointer ${
               activeReelHover && activeReelHover !== "reel2" ? "opacity-65" : "opacity-100"
             }`}
           >
@@ -225,7 +225,7 @@ export default function SoloDirectionTriptych({
             onBlur={() => setActiveReelHover(null)}
             onClick={() => reel3 && onSelectDeliverable?.(reel3)}
             onKeyDown={(e) => handleCardKeyDown(e, reel3)}
-            className={`relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-chroma-cyan/60 transition-all duration-300 cursor-pointer ${
+            className={`w-[78vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center relative aspect-[9/16] bg-surface-elevated overflow-hidden group flex flex-col justify-between p-space-sm border border-border-hairline hover:border-chroma-cyan/60 transition-all duration-300 cursor-pointer ${
               activeReelHover && activeReelHover !== "reel3" ? "opacity-65" : "opacity-100"
             }`}
           >

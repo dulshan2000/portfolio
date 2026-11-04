@@ -139,11 +139,11 @@ export default function PipelineTerminal() {
         </div>
 
         {/* 6-Stage Node Pipeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-xs relative">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-2 sm:gap-space-xs relative">
           {pipelineNodes.map((node, index) => (
             <div
               key={node.num}
-              className="relative bg-surface-panel p-space-sm flex flex-col justify-between min-h-[155px] border border-border-hairline hover:border-border-active transition-colors"
+              className="relative bg-surface-panel p-2.5 sm:p-space-sm flex flex-col justify-between min-h-[130px] sm:min-h-[155px] border border-border-hairline hover:border-border-active transition-colors"
             >
               <div className="flex items-center justify-between font-telemetry-sm uppercase">
                 <span className="text-text-muted">{node.num}</span>
@@ -310,21 +310,21 @@ export default function PipelineTerminal() {
         {/* Quick Action Buttons */}
         <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center justify-center gap-space-sm p-space-md lg:p-space-lg shrink-0 border-t lg:border-t-0 lg:border-l border-border-hairline bg-surface-panel/30">
           <a
-            className="inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 bg-anamorphic-amber hover:bg-text-primary text-surface-container-lowest font-telemetry-lg uppercase transition-all duration-150 border border-anamorphic-amber whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-space-xs px-4 sm:px-space-lg py-3 sm:py-3.5 bg-anamorphic-amber hover:bg-text-primary text-surface-container-lowest font-telemetry-lg text-xs sm:text-sm uppercase transition-all duration-150 border border-anamorphic-amber"
             href="https://wa.me/94763349851"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="material-symbols-outlined text-[18px]">chat</span>
-            <span>WhatsApp Direct [+94 76 33 49 851]</span>
+            <span className="material-symbols-outlined text-[18px] shrink-0">chat</span>
+            <span className="truncate">WhatsApp [+94 76 33 49 851]</span>
           </a>
 
           <a
-            className="inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 bg-surface-panel hover:bg-chroma-cyan hover:text-surface-container-lowest text-text-primary font-telemetry-lg uppercase transition-colors border border-border-hairline whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-space-xs px-4 sm:px-space-lg py-3 sm:py-3.5 bg-surface-panel hover:bg-chroma-cyan hover:text-surface-container-lowest text-text-primary font-telemetry-lg text-xs sm:text-sm uppercase transition-colors border border-border-hairline"
             href="mailto:dulshanhareendra@gmail.com"
           >
-            <span className="material-symbols-outlined text-[18px]">mail</span>
-            <span>EMAIL: dulshanhareendra@gmail.com</span>
+            <span className="material-symbols-outlined text-[18px] shrink-0">mail</span>
+            <span className="truncate">dulshanhareendra@gmail.com</span>
           </a>
         </div>
       </div>

@@ -194,11 +194,56 @@ export default function Hero() {
       className="relative w-full px-space-md lg:px-margin-desktop py-space-xl flex flex-col gap-space-lg"
     >
       {/* ARRI HUD Outer Viewfinder Viewport */}
-      <div className="relative w-full min-h-[640px] sm:min-h-[700px] lg:min-h-[740px] overflow-hidden bg-surface-container-lowest flex flex-col justify-between p-space-md lg:p-space-lg border border-border-hairline">
-        {/* Live Video Background Container with Full Showreel */}
+      <div className="relative w-full lg:min-h-[740px] overflow-hidden bg-surface-container-lowest flex flex-col justify-between p-0 sm:p-space-md lg:p-space-lg border border-border-hairline">
+        {/* TOP HUD TELEMETRY BAR (Mobile: Above 16:9 Video | Desktop: Overlay) */}
+        <div className="relative z-20 w-full flex items-center justify-between gap-2 font-telemetry-sm text-text-muted uppercase p-3 sm:p-0 sm:mb-4 bg-surface-elevated sm:bg-transparent border-b sm:border-b-0 border-border-hairline">
+          <div className="flex items-center gap-1.5 sm:gap-space-sm bg-surface-panel sm:bg-surface-elevated/80 backdrop-blur-md px-2 sm:px-space-sm py-1 border border-border-hairline text-[10px] sm:text-telemetry-sm">
+            <span className="w-2 h-2 rounded-full bg-rec-crimson rec-live"></span>
+            <span className="text-text-primary font-bold tabular-nums">
+              TC {currentTimecode}
+            </span>
+            <span className="text-text-muted/40 hidden sm:inline">/</span>
+            <span className="text-text-muted tabular-nums hidden sm:inline">
+              00:01:33:09
+            </span>
+            <span className="text-text-muted/40">/</span>
+            <span className="text-chroma-cyan">25 FPS</span>
+            <span className="text-text-muted/40 hidden xs:inline">/</span>
+            <span className="text-anamorphic-amber hidden xs:inline">16:9 HD</span>
+          </div>
+
+          <div className="flex items-center gap-space-xs">
+            <div className="hidden md:flex items-center gap-space-sm bg-surface-elevated/80 backdrop-blur-md px-space-sm py-1 border border-border-hairline">
+              <span className="text-text-primary">BLENDER</span>
+              <span className="text-text-muted/40">•</span>
+              <span className="text-text-primary">AFTER EFFECTS</span>
+              <span className="text-text-muted/40">•</span>
+              <span className="text-anamorphic-amber">DAVINCI RESOLVE</span>
+              <span className="text-text-muted/40">•</span>
+              <span className="text-chroma-cyan">PREMIERE PRO</span>
+            </div>
+
+            <button
+              onClick={toggleCinemaMode}
+              className={`hidden sm:inline-flex items-center gap-1.5 px-space-sm py-1 font-telemetry-sm uppercase transition-colors border cursor-pointer ${
+                cinemaMode
+                  ? "bg-anamorphic-amber text-surface-container-lowest font-bold border-anamorphic-amber"
+                  : "bg-surface-elevated/80 hover:bg-surface-panel text-chroma-cyan border-border-hairline"
+              }`}
+              title="Toggle unobstructed showreel view"
+            >
+              <span className="material-symbols-outlined text-[15px]">
+                {cinemaMode ? "visibility" : "theaters"}
+              </span>
+              <span>{cinemaMode ? "Restore HUD" : "Cinema View"}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Live Video Container: Uncropped True 16:9 Frame on Mobile, Full-Bleed Viewfinder on Desktop */}
         <div
           onClick={() => cinemaMode && setCinemaMode(false)}
-          className={`absolute inset-0 z-0 overflow-hidden bg-surface-container-lowest ${
+          className={`relative aspect-video w-full lg:aspect-auto lg:absolute lg:inset-0 z-0 overflow-hidden bg-black ${
             cinemaMode ? "cursor-pointer" : ""
           }`}
         >
@@ -212,28 +257,50 @@ export default function Hero() {
             playsInline
             preload="auto"
             onTimeUpdate={handleTimeUpdate}
-            className={`w-full h-full object-cover object-center transition-opacity duration-500 ${
-              cinemaMode ? "opacity-100" : "opacity-80"
+            className={`w-full h-full object-contain lg:object-cover object-center transition-opacity duration-500 ${
+              cinemaMode ? "opacity-100" : "opacity-100 lg:opacity-80"
             }`}
           />
+
+          {/* Mobile Quick Play/Pause & Audio Overlay Controls inside the 16:9 Video Corner */}
+          <div className="flex lg:hidden absolute bottom-2.5 right-2.5 z-20 items-center gap-1.5">
+            <button
+              onClick={togglePlay}
+              className="inline-flex items-center gap-1 px-2.5 py-1 bg-surface-container-lowest/85 backdrop-blur-md text-text-primary font-telemetry-sm text-[10px] uppercase border border-border-hairline"
+            >
+              <span className="material-symbols-outlined text-chroma-cyan text-[14px]">
+                {isPlaying ? "pause" : "play_arrow"}
+              </span>
+              <span>{isPlaying ? "PAUSE" : "PLAY"}</span>
+            </button>
+            <button
+              onClick={toggleMute}
+              className="inline-flex items-center gap-1 px-2.5 py-1 bg-surface-container-lowest/85 backdrop-blur-md text-text-primary font-telemetry-sm text-[10px] uppercase border border-border-hairline"
+            >
+              <span className="material-symbols-outlined text-anamorphic-amber text-[14px]">
+                {isMuted ? "volume_off" : "volume_up"}
+              </span>
+              <span>{isMuted ? "MUTED" : "AUDIO"}</span>
+            </button>
+          </div>
         </div>
 
-        {/* Anamorphic Vignette Scrim & Dynamic Overlays (Dimmed in Cinema Mode) */}
+        {/* Anamorphic Vignette Scrim & Dynamic Overlays (Desktop Only so Mobile 16:9 Video stays 100% clear) */}
         <div
           className={`
-            absolute inset-0 z-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/50 to-surface-container-lowest/80 pointer-events-none transition-opacity duration-500
+            hidden lg:block absolute inset-0 z-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/50 to-surface-container-lowest/80 pointer-events-none transition-opacity duration-500
             ${cinemaMode ? "opacity-20" : "opacity-100"}
           `}
         />
         <div
           className={`
-            absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(14,14,16,0.85)_100%)] pointer-events-none transition-opacity duration-500
+            hidden lg:block absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(14,14,16,0.85)_100%)] pointer-events-none transition-opacity duration-500
             ${cinemaMode ? "opacity-15" : "opacity-100"}
           `}
         />
 
-        {/* ARRI Safe Action / Safe Title Box (Overlay Matrix) */}
-        <div className="absolute inset-6 sm:inset-10 lg:inset-14 pointer-events-none z-10">
+        {/* ARRI Safe Action / Safe Title Box (Desktop Only) */}
+        <div className="hidden lg:block absolute inset-14 pointer-events-none z-10">
           <span className="absolute top-0 left-0 w-3 h-0.5 bg-text-muted/40"></span>
           <span className="absolute top-0 left-0 w-0.5 h-3 bg-text-muted/40"></span>
           <span className="absolute top-0 right-0 w-3 h-0.5 bg-text-muted/40"></span>
@@ -251,70 +318,25 @@ export default function Hero() {
           )}
         </div>
 
-        {/* TOP HUD TELEMETRY BAR */}
-        <div className="relative z-20 w-full flex flex-wrap items-center justify-between gap-space-sm font-telemetry-sm text-text-muted uppercase mb-4">
-          <div className="flex items-center gap-space-sm bg-surface-elevated/80 backdrop-blur-md px-space-sm py-1 border border-border-hairline">
-            <span className="w-2 h-2 rounded-full bg-rec-crimson rec-live"></span>
-            <span className="text-text-primary font-bold tabular-nums">
-              TC {currentTimecode}
-            </span>
-            <span className="text-text-muted/40">/</span>
-            <span className="text-text-muted tabular-nums hidden sm:inline">
-              00:01:33:09
-            </span>
-            <span className="text-text-muted/40 hidden sm:inline">/</span>
-            <span className="text-chroma-cyan">25 FPS</span>
-            <span className="text-text-muted/40">/</span>
-            <span className="text-anamorphic-amber">16:9 FULL HD</span>
-          </div>
-
-          <div className="flex items-center gap-space-xs">
-            <div className="hidden md:flex items-center gap-space-sm bg-surface-elevated/80 backdrop-blur-md px-space-sm py-1 border border-border-hairline">
-              <span className="text-text-primary">BLENDER</span>
-              <span className="text-text-muted/40">•</span>
-              <span className="text-text-primary">AFTER EFFECTS</span>
-              <span className="text-text-muted/40">•</span>
-              <span className="text-anamorphic-amber">DAVINCI RESOLVE</span>
-              <span className="text-text-muted/40">•</span>
-              <span className="text-chroma-cyan">PREMIERE PRO</span>
-            </div>
-
-            <button
-              onClick={toggleCinemaMode}
-              className={`inline-flex items-center gap-1.5 px-space-sm py-1 font-telemetry-sm uppercase transition-colors border cursor-pointer ${
-                cinemaMode
-                  ? "bg-anamorphic-amber text-surface-container-lowest font-bold border-anamorphic-amber"
-                  : "bg-surface-elevated/80 hover:bg-surface-panel text-chroma-cyan border-border-hairline"
-              }`}
-              title="Toggle unobstructed showreel view"
-            >
-              <span className="material-symbols-outlined text-[15px]">
-                {cinemaMode ? "visibility" : "theaters"}
-              </span>
-              <span>{cinemaMode ? "Restore HUD" : "Cinema View"}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* CENTER EDITORIAL HERO DISPLAY (Fades out cleanly when Cinema Mode is active) */}
+        {/* CENTER EDITORIAL HERO DISPLAY (Below 16:9 video on Mobile, Overlay on Desktop) */}
         <div
-          className={`relative z-20 flex flex-col max-w-4xl my-auto py-2 transition-all duration-500 ${
+          className={`relative z-20 flex flex-col max-w-4xl my-auto p-4 sm:p-0 sm:py-3 transition-all duration-500 ${
             cinemaMode
-              ? "opacity-0 pointer-events-none translate-y-2"
+              ? "lg:opacity-0 lg:pointer-events-none lg:translate-y-2"
               : "opacity-100"
           }`}
         >
           {/* Eyebrow badge */}
-          <div className="flex items-center gap-space-xs font-telemetry-sm uppercase tracking-widest text-anamorphic-amber mb-2">
-            <span className="material-symbols-outlined text-anamorphic-amber text-[14px]">
+          <div className="flex items-center gap-1.5 font-telemetry-sm text-[10px] sm:text-telemetry-sm uppercase tracking-wider sm:tracking-widest text-anamorphic-amber mb-2">
+            <span className="material-symbols-outlined text-anamorphic-amber text-[14px] shrink-0">
               videocam
             </span>
-            <span>
-              [ DULSHAN BANDARA // VFX &amp; COMPOSITE ARTIST · COMMERCIAL DOP · VIDEO EDITOR &amp; COLORIST ]
+            <span className="truncate sm:whitespace-normal">
+              DULSHAN BANDARA // VFX · COMMERCIAL DOP · EDITOR &amp; COLORIST
             </span>
           </div>
 
-          <h1 className="font-display text-[2rem] sm:text-5xl lg:text-[54px] xl:text-[60px] leading-[1.06] tracking-tight font-extrabold uppercase drop-shadow-md break-normal">
+          <h1 className="font-display text-[1.65rem] sm:text-5xl lg:text-[54px] xl:text-[60px] leading-[1.08] tracking-tight font-extrabold uppercase drop-shadow-md break-normal">
             <span className="block text-text-primary">FULL-PIPELINE</span>
             <span className="block bg-gradient-to-r from-anamorphic-amber via-primary to-chroma-cyan bg-clip-text text-transparent">
               COMMERCIAL FILMMAKING
@@ -322,15 +344,15 @@ export default function Hero() {
             <span className="block text-text-primary">&amp; BROADCAST VFX</span>
           </h1>
 
-          <p className="font-body-md text-sm lg:text-base max-w-xl text-on-surface-variant leading-relaxed mt-3 mb-6">
+          <p className="font-body-md text-xs sm:text-sm lg:text-base max-w-xl text-on-surface-variant leading-relaxed mt-2.5 mb-4 sm:mb-6">
             From on-set cinematography and DaVinci color grading to Blender 3D, precision compositing, and AI-driven commercial workflows.
           </p>
 
           {/* CTA Cluster */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mb-2 sm:mb-6">
             <button
               onClick={toggleCinemaMode}
-              className="group inline-flex items-center gap-space-xs px-space-lg py-3 bg-anamorphic-amber hover:bg-text-primary text-surface-container-lowest font-telemetry-lg uppercase transition-all duration-150 cursor-pointer"
+              className="hidden lg:inline-flex group items-center gap-space-xs px-space-lg py-3 bg-anamorphic-amber hover:bg-text-primary text-surface-container-lowest font-telemetry-lg uppercase transition-all duration-150 cursor-pointer"
             >
               <span
                 className="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110"
@@ -343,7 +365,7 @@ export default function Hero() {
 
             <button
               onClick={togglePlay}
-              className="inline-flex items-center gap-space-xs px-space-sm py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-sm uppercase transition-colors border border-border-hairline cursor-pointer"
+              className="hidden lg:inline-flex items-center gap-space-xs px-space-sm py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-sm uppercase transition-colors border border-border-hairline cursor-pointer"
               title={isPlaying ? "Pause background showreel" : "Play background showreel"}
             >
               <span className="material-symbols-outlined text-chroma-cyan text-[18px]">
@@ -354,7 +376,7 @@ export default function Hero() {
 
             <button
               onClick={toggleMute}
-              className="inline-flex items-center gap-space-xs px-space-sm py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-sm uppercase transition-colors border border-border-hairline cursor-pointer"
+              className="hidden lg:inline-flex items-center gap-space-xs px-space-sm py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-sm uppercase transition-colors border border-border-hairline cursor-pointer"
               title={isMuted ? "Unmute audio" : "Mute audio"}
             >
               <span className="material-symbols-outlined text-anamorphic-amber text-[18px]">
@@ -365,9 +387,9 @@ export default function Hero() {
 
             <a
               href="#flagships"
-              className="inline-flex items-center gap-space-xs px-space-lg py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-lg uppercase transition-colors border border-border-hairline"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 sm:py-3 bg-anamorphic-amber lg:bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-surface-container-lowest lg:text-text-primary font-telemetry-lg uppercase transition-colors border border-anamorphic-amber lg:border-border-hairline font-bold"
             >
-              <span className="material-symbols-outlined text-chroma-cyan text-[18px]">
+              <span className="material-symbols-outlined text-surface-container-lowest lg:text-chroma-cyan text-[18px]">
                 account_tree
               </span>
               <span>Explore Case Studies</span>
@@ -376,15 +398,15 @@ export default function Hero() {
         </div>
 
         {/* BOTTOM TIMELINE SCRUBBER & ACTIVE CHAPTER CONTROLS */}
-        <div className="relative z-20 w-full flex flex-col gap-space-xs bg-surface-elevated/90 backdrop-blur-md p-space-sm border border-border-hairline mt-4">
+        <div className="relative z-20 w-full flex flex-col gap-space-xs bg-surface-elevated/90 backdrop-blur-md p-3 sm:p-space-sm border-t sm:border border-border-hairline sm:mt-4">
           <div className="flex items-center justify-between font-telemetry-sm text-[10px] uppercase text-text-muted px-1">
-            <span>
-              ACTIVE CHAPTER:{" "}
+            <span className="truncate">
+              CHAPTER:{" "}
               <strong className="text-anamorphic-amber">
                 {chapters[activeChapterIndex]?.description}
               </strong>
             </span>
-            <span className="hidden sm:inline text-chroma-cyan">
+            <span className="hidden sm:inline text-chroma-cyan shrink-0 ml-2">
               CLICK OR DRAG TIMELINE TO SCRUB
             </span>
           </div>

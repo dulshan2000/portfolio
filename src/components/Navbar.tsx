@@ -87,13 +87,14 @@ export default function Navbar() {
             href="/files/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-panel border border-border-hairline hover:border-chroma-cyan transition-colors"
+            className="group relative inline-flex items-center gap-1.5 px-2.5 sm:px-space-sm py-1.5 bg-surface-panel border border-border-hairline hover:border-chroma-cyan transition-colors"
           >
             <span className="material-symbols-outlined text-chroma-cyan text-[16px]">
               download
             </span>
-            <span className="font-telemetry-sm text-telemetry-sm uppercase text-text-primary tracking-widest">
-              Download CV [PDF]
+            <span className="font-telemetry-sm text-[10px] sm:text-telemetry-sm uppercase text-text-primary tracking-wider sm:tracking-widest">
+              <span className="sm:hidden">CV [PDF]</span>
+              <span className="hidden sm:inline">Download CV [PDF]</span>
             </span>
           </a>
 
