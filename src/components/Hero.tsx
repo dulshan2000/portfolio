@@ -288,112 +288,148 @@ export default function Hero() {
         {/* Anamorphic Vignette Scrim & Dynamic Overlays (Desktop Only so Mobile 16:9 Video stays 100% clear) */}
         <div
           className={`
-            hidden lg:block absolute inset-0 z-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/50 to-surface-container-lowest/80 pointer-events-none transition-opacity duration-500
-            ${cinemaMode ? "opacity-20" : "opacity-100"}
+            hidden lg:block absolute inset-0 z-0 bg-gradient-to-r from-surface-container-lowest/95 via-surface-container-lowest/65 to-surface-container-lowest/20 pointer-events-none transition-opacity duration-500
+            ${cinemaMode ? "opacity-15" : "opacity-100"}
           `}
         />
         <div
           className={`
-            hidden lg:block absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(14,14,16,0.85)_100%)] pointer-events-none transition-opacity duration-500
+            hidden lg:block absolute inset-0 z-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest/75 pointer-events-none transition-opacity duration-500
             ${cinemaMode ? "opacity-15" : "opacity-100"}
           `}
         />
 
         {/* ARRI Safe Action / Safe Title Box (Desktop Only) */}
-        <div className="hidden lg:block absolute inset-14 pointer-events-none z-10">
-          <span className="absolute top-0 left-0 w-3 h-0.5 bg-text-muted/40"></span>
-          <span className="absolute top-0 left-0 w-0.5 h-3 bg-text-muted/40"></span>
-          <span className="absolute top-0 right-0 w-3 h-0.5 bg-text-muted/40"></span>
-          <span className="absolute top-0 right-0 w-0.5 h-3 bg-text-muted/40"></span>
-          <span className="absolute bottom-0 left-0 w-3 h-0.5 bg-text-muted/40"></span>
-          <span className="absolute bottom-0 left-0 w-0.5 h-3 bg-text-muted/40"></span>
-          <span className="absolute bottom-0 right-0 w-3 h-0.5 bg-text-muted/40"></span>
-          <span className="absolute bottom-0 right-0 w-0.5 h-3 bg-text-muted/40"></span>
-
-          {!cinemaMode && (
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-30 pointer-events-none">
-              <span className="w-8 h-px bg-text-primary"></span>
-              <span className="h-8 w-px bg-text-primary absolute"></span>
-            </div>
-          )}
+        <div className="hidden lg:block absolute inset-12 pointer-events-none z-10">
+          <span className="absolute top-0 left-0 w-4 h-px bg-text-muted/35"></span>
+          <span className="absolute top-0 left-0 w-px h-4 bg-text-muted/35"></span>
+          <span className="absolute top-0 right-0 w-4 h-px bg-text-muted/35"></span>
+          <span className="absolute top-0 right-0 w-px h-4 bg-text-muted/35"></span>
+          <span className="absolute bottom-0 left-0 w-4 h-px bg-text-muted/35"></span>
+          <span className="absolute bottom-0 left-0 w-px h-4 bg-text-muted/35"></span>
+          <span className="absolute bottom-0 right-0 w-4 h-px bg-text-muted/35"></span>
+          <span className="absolute bottom-0 right-0 w-px h-4 bg-text-muted/35"></span>
         </div>
 
-        {/* CENTER EDITORIAL HERO DISPLAY (Below 16:9 video on Mobile, Overlay on Desktop) */}
+        {/* CENTER EDITORIAL HERO DISPLAY (Below 16:9 video on Mobile, Asymmetric Editorial Composition on Desktop) */}
         <div
-          className={`relative z-20 flex flex-col max-w-4xl my-auto p-4 sm:p-0 sm:py-3 transition-all duration-500 ${
+          className={`relative z-20 w-full flex flex-col lg:flex-row lg:items-end justify-between gap-6 my-auto p-4 sm:p-0 sm:py-6 transition-all duration-500 ${
             cinemaMode
               ? "lg:opacity-0 lg:pointer-events-none lg:translate-y-2"
               : "opacity-100"
           }`}
         >
-          {/* Eyebrow badge */}
-          <div className="flex items-center gap-1.5 font-telemetry-sm text-[10px] sm:text-telemetry-sm uppercase tracking-wider sm:tracking-widest text-anamorphic-amber mb-2">
-            <span className="material-symbols-outlined text-anamorphic-amber text-[14px] shrink-0">
-              videocam
-            </span>
-            <span className="truncate sm:whitespace-normal">
-              DULSHAN BANDARA // VFX · COMMERCIAL DOP · EDITOR &amp; COLORIST
-            </span>
+          {/* Left Editorial Identity Column */}
+          <div className="flex flex-col max-w-3xl">
+            {/* Overline Location & Availability */}
+            <div className="flex flex-wrap items-center gap-2 font-telemetry-sm text-[10px] sm:text-xs uppercase tracking-[0.22em] text-text-muted mb-3">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-surface-panel/90 border border-border-hairline text-anamorphic-amber font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-rec-crimson rec-live"></span>
+                COLOMBO, SRI LANKA
+              </span>
+              <span className="hidden sm:inline text-border-hairline">//</span>
+              <span className="text-text-muted tracking-[0.18em]">
+                COMMERCIAL PRODUCTION &amp; POST-PRODUCTION
+              </span>
+            </div>
+
+            {/* Monumental Artist Name Title */}
+            <h1 className="font-display text-[2.35rem] sm:text-6xl lg:text-[72px] xl:text-[82px] leading-[0.94] tracking-[-0.03em] font-extrabold uppercase text-text-primary drop-shadow-lg">
+              DULSHAN{" "}
+              <span className="bg-gradient-to-r from-text-primary via-anamorphic-amber to-chroma-cyan bg-clip-text text-transparent">
+                BANDARA
+              </span>
+              <span className="text-rec-crimson">.</span>
+            </h1>
+
+            {/* Secondary Role & Discipline Architecture */}
+            <div className="mt-4 pt-3 border-t border-border-hairline/70 flex flex-wrap items-center gap-x-3 gap-y-1.5 font-headline-md text-xs sm:text-base lg:text-[19px] uppercase tracking-[0.12em]">
+              <span className="text-anamorphic-amber font-bold">
+                VFX &amp; COMPOSITE ARTIST
+              </span>
+              <span className="text-text-muted/50 font-mono">/</span>
+              <span className="text-chroma-cyan font-bold">
+                COMMERCIAL DOP
+              </span>
+              <span className="text-text-muted/50 font-mono">/</span>
+              <span className="text-text-primary font-semibold">
+                VIDEO EDITOR &amp; COLORIST
+              </span>
+            </div>
+
+            {/* Personal Editorial Bio Statement */}
+            <p className="font-body-md text-xs sm:text-sm lg:text-[15px] max-w-xl text-on-surface-variant leading-relaxed mt-3.5 mb-5 sm:mb-7 border-l-2 border-anamorphic-amber/70 pl-3.5">
+              I direct, shoot, and craft high-impact visuals for Sri Lanka&apos;s leading brands—bridging on-set commercial cinematography and DaVinci Resolve color grading with Blender 3D, precision compositing, and AI-assisted workflows.
+            </p>
+
+            {/* Unified Editorial Control Deck */}
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+              <button
+                onClick={toggleCinemaMode}
+                className="hidden lg:inline-flex group items-center gap-2.5 px-6 py-3.5 bg-anamorphic-amber hover:bg-text-primary text-surface-container-lowest font-telemetry-lg uppercase font-bold tracking-wider transition-all duration-150 cursor-pointer shadow-lg shadow-black/40"
+              >
+                <span
+                  className="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  play_arrow
+                </span>
+                <span>Watch 93s Showreel</span>
+              </button>
+
+              <a
+                href="#flagships"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 bg-anamorphic-amber lg:bg-surface-elevated/90 hover:bg-surface-panel backdrop-blur-md text-surface-container-lowest lg:text-text-primary font-telemetry-lg uppercase font-bold tracking-wider transition-colors border border-anamorphic-amber lg:border-border-hairline"
+              >
+                <span className="material-symbols-outlined text-surface-container-lowest lg:text-chroma-cyan text-[18px]">
+                  account_tree
+                </span>
+                <span>Selected Works (22)</span>
+              </a>
+
+              {/* Integrated Playback & Audio Transport Pill (Desktop) */}
+              <div className="hidden lg:inline-flex items-center bg-surface-elevated/90 backdrop-blur-md border border-border-hairline divide-x divide-border-hairline">
+                <button
+                  onClick={togglePlay}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-3.5 hover:bg-surface-panel text-text-primary font-telemetry-sm uppercase transition-colors cursor-pointer"
+                  title={isPlaying ? "Pause background showreel" : "Play background showreel"}
+                >
+                  <span className="material-symbols-outlined text-chroma-cyan text-[17px]">
+                    {isPlaying ? "pause" : "play_arrow"}
+                  </span>
+                  <span>{isPlaying ? "PAUSE" : "PLAY"}</span>
+                </button>
+
+                <button
+                  onClick={toggleMute}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-3.5 hover:bg-surface-panel text-text-primary font-telemetry-sm uppercase transition-colors cursor-pointer"
+                  title={isMuted ? "Unmute audio" : "Mute audio"}
+                >
+                  <span className="material-symbols-outlined text-anamorphic-amber text-[17px]">
+                    {isMuted ? "volume_off" : "volume_up"}
+                  </span>
+                  <span>{isMuted ? "MUTED" : "AUDIO ON"}</span>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <h1 className="font-display text-[1.65rem] sm:text-5xl lg:text-[54px] xl:text-[60px] leading-[1.08] tracking-tight font-extrabold uppercase drop-shadow-md break-normal">
-            <span className="block text-text-primary">FULL-PIPELINE</span>
-            <span className="block bg-gradient-to-r from-anamorphic-amber via-primary to-chroma-cyan bg-clip-text text-transparent">
-              COMMERCIAL FILMMAKING
-            </span>
-            <span className="block text-text-primary">&amp; BROADCAST VFX</span>
-          </h1>
-
-          <p className="font-body-md text-xs sm:text-sm lg:text-base max-w-xl text-on-surface-variant leading-relaxed mt-2.5 mb-4 sm:mb-6">
-            From on-set cinematography and DaVinci color grading to Blender 3D, precision compositing, and AI-driven commercial workflows.
-          </p>
-
-          {/* CTA Cluster */}
-          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mb-2 sm:mb-6">
-            <button
-              onClick={toggleCinemaMode}
-              className="hidden lg:inline-flex group items-center gap-space-xs px-space-lg py-3 bg-anamorphic-amber hover:bg-text-primary text-surface-container-lowest font-telemetry-lg uppercase transition-all duration-150 cursor-pointer"
-            >
-              <span
-                className="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                play_arrow
-              </span>
-              <span>Watch 93s Showreel [Unobstructed]</span>
-            </button>
-
-            <button
-              onClick={togglePlay}
-              className="hidden lg:inline-flex items-center gap-space-xs px-space-sm py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-sm uppercase transition-colors border border-border-hairline cursor-pointer"
-              title={isPlaying ? "Pause background showreel" : "Play background showreel"}
-            >
-              <span className="material-symbols-outlined text-chroma-cyan text-[18px]">
-                {isPlaying ? "pause" : "play_arrow"}
-              </span>
-              <span>{isPlaying ? "PAUSE" : "PLAY"}</span>
-            </button>
-
-            <button
-              onClick={toggleMute}
-              className="hidden lg:inline-flex items-center gap-space-xs px-space-sm py-3 bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-text-primary font-telemetry-sm uppercase transition-colors border border-border-hairline cursor-pointer"
-              title={isMuted ? "Unmute audio" : "Mute audio"}
-            >
-              <span className="material-symbols-outlined text-anamorphic-amber text-[18px]">
-                {isMuted ? "volume_off" : "volume_up"}
-              </span>
-              <span>{isMuted ? "MUTED" : "AUDIO ON"}</span>
-            </button>
-
-            <a
-              href="#flagships"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 sm:py-3 bg-anamorphic-amber lg:bg-surface-elevated/80 hover:bg-surface-panel backdrop-blur-md text-surface-container-lowest lg:text-text-primary font-telemetry-lg uppercase transition-colors border border-anamorphic-amber lg:border-border-hairline font-bold"
-            >
-              <span className="material-symbols-outlined text-surface-container-lowest lg:text-chroma-cyan text-[18px]">
-                account_tree
-              </span>
-              <span>Explore Case Studies</span>
-            </a>
+          {/* Right Editorial Spec Callout (Desktop Only — Keeps Right Side of Video Unobstructed) */}
+          <div className="hidden xl:flex flex-col items-end text-right font-telemetry-sm uppercase gap-2 shrink-0 pb-1">
+            <div className="bg-surface-elevated/85 backdrop-blur-md border border-border-hairline p-3.5 flex flex-col gap-2 min-w-[210px]">
+              <div className="flex items-center justify-between gap-4 text-[10px] text-text-muted border-b border-border-hairline pb-1.5">
+                <span>VERIFIED CREDITS</span>
+                <span className="text-anamorphic-amber font-bold">22 BROADCAST</span>
+              </div>
+              <div className="flex items-center justify-between gap-4 text-[10px] text-text-muted border-b border-border-hairline pb-1.5">
+                <span>DISCIPLINES</span>
+                <span className="text-chroma-cyan font-bold">VFX · DOP · COLOR</span>
+              </div>
+              <div className="flex items-center justify-between gap-4 text-[10px] text-text-muted">
+                <span>DIRECT BOOKING</span>
+                <span className="text-text-primary font-bold">OPEN WORLDWIDE</span>
+              </div>
+            </div>
           </div>
         </div>
 
