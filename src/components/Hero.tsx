@@ -441,7 +441,7 @@ export default function Hero() {
       <div className="w-full bg-surface-elevated py-space-md px-space-md overflow-hidden flex flex-col gap-space-xs border border-border-hairline">
         <div className="flex items-center justify-between font-telemetry-sm uppercase text-text-muted px-space-sm mb-1">
           <span className="text-chroma-cyan">
-            // PREMIER COMMERCIAL CLIENTS &amp; AGENCIES (16 VERIFIED CREDITS)
+            {"// PREMIER COMMERCIAL CLIENTS & AGENCIES (16 VERIFIED CREDITS)"}
           </span>
           <span className="hidden sm:inline">
             BROADCAST NETWORKS &amp; NATIONAL RELEASES

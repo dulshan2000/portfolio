@@ -20,12 +20,15 @@ export default function DeliverableModal({
   onClose,
   onSelectDeliverable,
 }: DeliverableModalProps) {
-  const [selectedClipIndex, setSelectedClipIndex] = useState(0);
+  const [selectedClipState, setSelectedClipState] = useState<{
+    deliverableId?: string;
+    index: number;
+  }>({ index: 0 });
 
-  // Reset clip selector whenever the active deliverable changes
-  useEffect(() => {
-    setSelectedClipIndex(0);
-  }, [deliverable?.id]);
+  const selectedClipIndex =
+    selectedClipState.deliverableId === deliverable?.id
+      ? selectedClipState.index
+      : 0;
 
   const currentIndex = deliverable
     ? deliverables.findIndex((d) => d.id === deliverable.id)
@@ -160,7 +163,12 @@ export default function DeliverableModal({
                 return (
                   <button
                     key={clip.fileId}
-                    onClick={() => setSelectedClipIndex(idx)}
+                    onClick={() =>
+                      setSelectedClipState({
+                        deliverableId: deliverable.id,
+                        index: idx,
+                      })
+                    }
                     className={`px-2.5 py-1 transition-colors border cursor-pointer ${
                       isSelected
                         ? "bg-anamorphic-amber text-surface-container-lowest font-bold border-anamorphic-amber"
@@ -268,7 +276,7 @@ export default function DeliverableModal({
           {/* Overview */}
           <div className="flex flex-col gap-1">
             <h4 className="font-telemetry-sm text-xs text-text-muted uppercase font-bold">
-              // PRODUCTION OVERVIEW
+              {"// PRODUCTION OVERVIEW"}
             </h4>
             <p className="font-body-md text-sm text-on-surface-variant leading-relaxed">
               {deliverable.overview}
@@ -279,7 +287,7 @@ export default function DeliverableModal({
           {deliverable.highlights && deliverable.highlights.length > 0 && (
             <div className="flex flex-col gap-2">
               <h4 className="font-telemetry-sm text-xs text-text-muted uppercase font-bold">
-                // TECHNICAL EXECUTION BREAKDOWN
+                {"// TECHNICAL EXECUTION BREAKDOWN"}
               </h4>
               <ul className="flex flex-col gap-2">
                 {deliverable.highlights.map((item, idx) => (

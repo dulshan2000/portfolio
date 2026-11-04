@@ -132,7 +132,7 @@ export default function PipelineTerminal() {
       {/* Node Flow Architectural Visualization */}
       <div className="w-full bg-surface-elevated p-space-md lg:p-space-lg flex flex-col gap-space-md border border-border-hairline">
         <div className="flex items-center justify-between font-telemetry-sm uppercase text-text-muted">
-          <span>// FULL-STACK COMMERCIAL PRODUCTION FLOW</span>
+          <span>{"// FULL-STACK COMMERCIAL PRODUCTION FLOW"}</span>
           <span className="text-anamorphic-amber font-semibold">
             ENGINE // BLENDER • AFTER EFFECTS • RESOLVE • PREMIERE
           </span>
@@ -185,7 +185,7 @@ export default function PipelineTerminal() {
             <span className="material-symbols-outlined text-[16px]">
               verified
             </span>
-            <span>// OFFICIAL CREDENTIALS STRIP &amp; CAREER TIMELINE</span>
+            <span>{"// OFFICIAL CREDENTIALS STRIP & CAREER TIMELINE"}</span>
           </div>
           <span className="text-text-muted text-xs">
             PROFESSIONAL ROLES &amp; SLIIT ACADEMIC RECORD
@@ -231,7 +231,7 @@ export default function PipelineTerminal() {
 
         {/* Real Toolkit Strip */}
         <div className="bg-surface-panel/60 p-space-sm border border-border-hairline flex flex-wrap items-center justify-between gap-space-sm font-telemetry-sm text-xs uppercase">
-          <span className="text-text-muted font-bold">// VERIFIED TOOLKIT:</span>
+          <span className="text-text-muted font-bold">{"// VERIFIED TOOLKIT:"}</span>
           <div className="flex flex-wrap items-center gap-space-xs text-text-primary">
             <span className="px-2 py-0.5 bg-surface-elevated border border-border-hairline text-anamorphic-amber">
               Blender

@@ -349,7 +349,7 @@ export default function SoloDirectionTriptych({
           <div className="bg-surface-elevated p-space-md flex flex-col gap-space-sm border border-border-hairline">
             <div className="flex items-center justify-between font-telemetry-sm uppercase">
               <span className="text-text-primary font-bold">
-                // 6-PILLAR TECHNICAL MATRIX
+                {"// 6-PILLAR TECHNICAL MATRIX"}
               </span>
               <span className="text-chroma-cyan">CALIBRATED</span>
             </div>
