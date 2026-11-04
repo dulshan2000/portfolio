@@ -73,9 +73,10 @@ export default function SoloDirectionTriptych({
             <div className="absolute inset-0 z-0 overflow-hidden">
               <HoverVideoPreview
                 src="/videos/Pittu Reel v8.mp4"
+                poster="/images/posters/isso-pittu-poster.jpg"
                 isHovered={activeReelHover === "reel1"}
-                previewStart={1.5}
-                previewDuration={6.0}
+                previewStart={0}
+                previewDuration={6.8}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -160,9 +161,10 @@ export default function SoloDirectionTriptych({
             <div className="absolute inset-0 z-0 overflow-hidden">
               <HoverVideoPreview
                 src="/videos/ISSO BOGO 1.mp4"
+                poster="/images/posters/isso-bogo-poster.jpg"
                 isHovered={activeReelHover === "reel2"}
-                previewStart={1.5}
-                previewDuration={6.0}
+                previewStart={0}
+                previewDuration={6.8}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -230,9 +232,10 @@ export default function SoloDirectionTriptych({
             <div className="absolute inset-0 z-0 overflow-hidden">
               <HoverVideoPreview
                 src="/videos/Pittu Kottu Reel v4.mp4"
+                poster="/images/posters/isso-kottu-poster.jpg"
                 isHovered={activeReelHover === "reel3"}
-                previewStart={1.5}
-                previewDuration={6.0}
+                previewStart={0}
+                previewDuration={6.8}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

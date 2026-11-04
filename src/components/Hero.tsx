@@ -205,10 +205,12 @@ export default function Hero() {
           <video
             ref={videoRef}
             src="/videos/Showreel for hero section.mp4"
+            poster="/images/posters/showreel-poster.jpg"
             autoPlay
             loop
             muted={isMuted}
             playsInline
+            preload="auto"
             onTimeUpdate={handleTimeUpdate}
             className={`w-full h-full object-cover object-center transition-opacity duration-500 ${
               cinemaMode ? "opacity-100" : "opacity-80"

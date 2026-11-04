@@ -67,6 +67,7 @@ export default function FlagshipsBento({ onSelectDeliverable }: FlagshipsBentoPr
           <div className="absolute inset-0 z-0 overflow-hidden">
             <HoverVideoPreview
               src="https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Peoples%20Remittance%20TV%20Commercial.mp4"
+              poster="/images/posters/pb-remit-poster.jpg"
               isHovered={hoveredCard === "pb-remit-3d"}
               previewStart={2.0}
               previewDuration={7.0}
@@ -163,6 +164,7 @@ export default function FlagshipsBento({ onSelectDeliverable }: FlagshipsBentoPr
           <div className="absolute inset-0 z-0 overflow-hidden">
             <HoverVideoPreview
               src="https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Uswatte%20Chirpy%20Chips%20Documentary.mp4"
+              poster="/images/posters/uswatte-poster.jpg"
               isHovered={hoveredCard === "uswatte-doc"}
               previewStart={2.0}
               previewDuration={7.0}
@@ -242,6 +244,7 @@ export default function FlagshipsBento({ onSelectDeliverable }: FlagshipsBentoPr
           <div className="absolute inset-0 z-0 overflow-hidden">
             <HoverVideoPreview
               src="https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Singer%20Simple%20Pay%20TVC.mp4"
+              poster="/images/posters/singer-poster.jpg"
               isHovered={hoveredCard === "singer-simple-pay"}
               previewStart={3.0}
               previewDuration={7.0}
@@ -323,6 +326,7 @@ export default function FlagshipsBento({ onSelectDeliverable }: FlagshipsBentoPr
           <div className="absolute inset-0 z-0 overflow-hidden">
             <HoverVideoPreview
               src="https://g6bd6f1e2xl7y65g.public.blob.vercel-storage.com/Little%20Lion%20TVC.mp4"
+              poster="/images/posters/little-lion-poster.jpg"
               isHovered={hoveredCard === "little-lion-tvc"}
               previewStart={2.0}
               previewDuration={7.0}
