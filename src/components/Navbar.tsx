@@ -59,10 +59,9 @@ export default function Navbar() {
           </Link>
 
           {/* Telemetry Status Strip */}
-          <div className="hidden xl:flex items-center gap-space-xs px-space-sm py-0.5 bg-surface-panel border border-border-hairline">
-            <span className="w-2 h-2 rounded-full bg-rec-crimson rec-live inline-block"></span>
+          <div className="hidden xl:flex items-center px-space-sm py-0.5 bg-surface-panel border border-border-hairline">
             <span className="font-telemetry-sm text-telemetry-sm uppercase tracking-wider text-text-muted">
-              REC | SRI LANKA — VFX &amp; COMPOSITE ARTIST · DOP · EDITOR · COLORIST
+              SRI LANKA — VFX &amp; COMPOSITE ARTIST · DOP · EDITOR · COLORIST
             </span>
           </div>
         </div>
